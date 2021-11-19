@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     public Atribute hp = new Atribute(3);
     public ETeams team;
     public GameObject turnIndicator;
-    public TextMeshPro indicatorLife;
+    
+    public Transform pilar;
    
     public void NotifyShootComplete(Proyectil proyectil)
     {
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     public void ApplyDamage(float Damage)
     {
         hp.RestToValue(Damage);
+        pilar.position -= new Vector3(0,Damage,0);
         
     }
 
@@ -38,13 +40,5 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         GameManager.instance.SetNextTurn();
     }
-    private void Update()
-    {
-        if(hp.currentValue <= 0)
-        {
-            Destroy(gameObject);
-        }
-        indicatorLife.SetText(hp.currentValue.ToString("0"));
-
-    }
+    
 }
