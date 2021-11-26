@@ -25,8 +25,10 @@ public class GameManager : MonoBehaviour
             if (currentPlayerA >= playerListA.Count )
             {
                 currentPlayerA = 0;
+               
             }
             playerListA[currentPlayerA].OnTurnBeggin();
+           
         }
         else
         {
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
             if (currentPlayerB >= playerListB.Count)
             {
                 currentPlayerB = 0;
+                
             }
             playerListB[currentPlayerB].OnTurnBeggin();
 

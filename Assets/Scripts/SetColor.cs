@@ -10,6 +10,7 @@ public class SetColor : MonoBehaviour
     void Update()
     {
         gameObject.GetComponent<Renderer>().material = materiales[num.randomNum];
+        
     }
 
     
